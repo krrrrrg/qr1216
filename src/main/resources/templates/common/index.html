@@ -253,9 +253,9 @@
     </main>
 
     <footer class="cart-footer">
-      <button id="view-cart" class="cart-button">
+      <button id="view-cart" class="cart-button" onclick="goToCart()">
         장바구니 보기
-        <span class="cart-count">0</span>
+        <!-- <span class="cart-count">0</span> -->
       </button>
     </footer>
     <script th:inline="javascript">
@@ -368,6 +368,14 @@
                 }
             });
         });
+    </script>
+    <script>
+      function goToCart() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const restaurantId = urlParams.get('restaurantId');
+        const tableId = urlParams.get('tableId');
+        window.location.href = `/cart?restaurantId=${restaurantId}&tableId=${tableId}`;
+      }
     </script>
     <script type="module" th:src="@{/js/cart-service.js}"></script>
     <script type="module" th:src="@{/js/script.js}"></script>

@@ -146,9 +146,9 @@
 <body>
     <header class="detail-header">
         <div class="header-title">
-            <button onclick="history.back()" class="back-button">
+            <a th:href="@{/menu(restaurantId=${param.restaurantId},tableId=${param.tableId})}" class="back-button">
                 <i class="fas fa-arrow-left"></i>
-            </button>
+            </a>
             <span class="store-name" th:text="${restaurant.name}">레스토랑 이름</span>
             <span class="table-indicator" th:text="'테이블 ' + ${tableId} + '번'"></span>
         </div>

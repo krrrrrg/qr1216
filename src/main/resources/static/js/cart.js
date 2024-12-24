@@ -124,12 +124,25 @@ function updateCart() {
         }));
         
         sessionStorage.setItem(cartKey, JSON.stringify(cartData));
+        renderCartItems();
         updateTotalPrice();
         updateTotalItemCount();
     } catch (error) {
         console.error('장바구니 업데이트 실패:', error);
         alert('장바구니 업데이트에 실패했습니다.');
     }
+}
+
+// 아이템 추가
+function addItemToCart(menuId, restaurantId) {
+    const existingItem = cartItems.find(item => item.menuId === menuId);
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        const newItem = { menuId, restaurantId, quantity: 1 };
+        cartItems.push(newItem);
+    }
+    updateCart(); // 장바구니 업데이트 호출
 }
 
 // 주문하기
@@ -190,6 +203,7 @@ async function placeOrder() {
 window.increaseQuantity = increaseQuantity;
 window.decreaseQuantity = decreaseQuantity;
 window.removeItem = removeItem;
+window.addItemToCart = addItemToCart;
 
 // 이벤트 리스너 등록
 document.addEventListener('DOMContentLoaded', () => {
