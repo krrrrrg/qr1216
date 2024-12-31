@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
-    <title>점주 로그인</title>
+    <title>오너 로그인</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}">
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css}">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -17,7 +17,7 @@
         <div class="auth-form">
             <div class="auth-header">
                 <div class="profile-image">🏪</div>
-                <h1>점주 로그인</h1>
+                <h1>오너 로그인</h1>
             </div>
             <form id="ownerLoginForm" onsubmit="return handleOwnerLogin(event)" action="/owner/login" method="post">
                 <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
@@ -39,7 +39,7 @@
                 <button type="submit" class="primary-button">로그인</button>
             </form>
             <div class="auth-links">
-                <a href="/owner/signup">점주 회원가입</a>
+                <a href="/owner/signup">오너 회원가입</a>
                 <div class="auth-separator">|</div>
                 <a href="/find/id">아이디 찾기</a>
                 <div class="auth-separator">|</div>
