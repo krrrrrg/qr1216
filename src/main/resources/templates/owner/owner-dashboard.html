@@ -218,14 +218,7 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
-      .menu-filters {
-        background-color: #f8f9fa;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-      }
-
-      /* 메뉴 관리 스타일 */
+    /* 메뉴 관리 스타일 */
       .menu-category {
         background: #fff;
         border-radius: 12px;
@@ -748,7 +741,7 @@
               <div
                 class="d-flex justify-content-between align-items-center mb-3"
               >
-                <h3>메뉴 목록</h3>
+                <h3 style="width: 300px">메뉴 목록</h3>
                 <button
                   class="btn btn-primary"
                   onclick="openAddMenuModal()"
@@ -757,23 +750,6 @@
                 >
                   새 메뉴 추가
                 </button>
-              </div>
-              <div class="menu-filters mb-3">
-                <div class="row">
-                  <div class="col-md-6">
-                    <select id="categoryFilter" class="form-control">
-                      <option value="all">전체 카테고리</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      id="menuSearch"
-                      class="form-control"
-                      placeholder="메뉴 검색..."
-                    />
-                  </div>
-                </div>
               </div>
               <div id="menuContainer"></div>
             </div>
@@ -1593,7 +1569,7 @@
             console.log(`카테고리 ${category}의 메뉴:`, categoryMenus);
             menuHtml += `
               <div class="category-section">
-                <h3 class="category-title">${category}</h3>
+                <h3 class="category-title"></h3>
                 <div class="menu-grid">
                 ${categoryMenus.map(menu => {
                   let imageUrl = menu.fileNames && menu.fileNames.length > 0 
